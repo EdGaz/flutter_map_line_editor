@@ -46,7 +46,7 @@ class PolyEditor {
   }
 
   clear(){
-    points.clear()
+    points.clear();
     callbackRefresh?.call();
   }
 
