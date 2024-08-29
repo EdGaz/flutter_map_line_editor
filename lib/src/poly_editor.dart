@@ -9,6 +9,8 @@ class PolyEditor {
   final Widget? intermediateIcon;
   final Size intermediateIconSize;
   final void Function(LatLng? updatePoint)? callbackRefresh;
+  final Function(DragEndDetails details, LatLng latLng)? onDragEnd;
+
   final bool addClosePathMarker;
 
   PolyEditor({
@@ -53,6 +55,7 @@ class PolyEditor {
         builder: (_, __, ___) => pointIcon,
         onDragStart: (_, __) => _markerToUpdate = indexClosure,
         onDragUpdate: updateMarker,
+        onDragEnd:onDragEnd,
         onLongPress: (ll) => remove(indexClosure),
       ));
     }
@@ -77,6 +80,7 @@ class PolyEditor {
             _markerToUpdate = indexClosure + 1;
           },
           onDragUpdate: updateMarker,
+          onDragEnd:onDragEnd
         ));
       }
     }
@@ -103,6 +107,7 @@ class PolyEditor {
             _markerToUpdate = indexClosure + 1;
           },
           onDragUpdate: updateMarker,
+          onDragEnd:onDragEnd,
         ));
       }
     }
