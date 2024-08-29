@@ -18,6 +18,7 @@ class PolyEditor {
     required this.pointIcon,
     this.intermediateIcon,
     this.callbackRefresh,
+    this.onDragEnd,
     this.addClosePathMarker = false,
     this.pointIconSize = const Size(30, 30),
     this.intermediateIconSize = const Size(30, 30),
