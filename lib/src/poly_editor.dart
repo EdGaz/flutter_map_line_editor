@@ -47,7 +47,7 @@ class PolyEditor {
 
   clear(){
     points.clear();
-    callbackRefresh?.call();
+    callbackRefresh?.call(null);
   }
 
   List<DragMarker> edit() {
